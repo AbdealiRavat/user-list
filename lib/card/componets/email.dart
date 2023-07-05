@@ -3,14 +3,14 @@
 
 import 'package:flutter/material.dart';
 
-class Trips extends StatelessWidget {
-  const Trips({
+class Email extends StatelessWidget {
+  const Email({
     Key? key,
-    required this.count,
+    required this.emailId,
   }) : super(key: key);
   // Define a constant constructor for the Trips widget which requires a 'count' parameter.
 
-  final String count; // The number of trips.
+  final String emailId; // The number of trips.
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +20,10 @@ class Trips extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            count, // Display the count of trips.
+            emailId, // Display the count of trips.
             style: TextStyle(
               color: Colors.black,
-              fontSize: 15,
+              fontSize: 13,
               fontWeight: FontWeight.w500,
             ),
           ),

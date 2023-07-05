@@ -15,12 +15,12 @@ class UserName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 5),
+      // padding: EdgeInsets.symmetric(vertical: 5),
       child: Text(
         name, // Display the name of the user.
 
         style: TextStyle(
-            color: Colors.black,
+            color: Colors.grey.shade900,
             fontSize: 16,
             fontWeight: FontWeight.w700,
             letterSpacing: 1),

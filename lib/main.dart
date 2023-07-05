@@ -18,7 +18,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: ThemeData(
           useMaterial3: true,
-          textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)),
+          textTheme:
+              GoogleFonts.workSansTextTheme(Theme.of(context).textTheme)),
 
       debugShowCheckedModeBanner: false,
       title: 'HomePage',

@@ -1,13 +1,13 @@
 import 'dart:convert';
 
-import 'package:demo_page/card/componets/logo.dart';
+import 'package:demo_page/card/componets/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 
-import 'componets/airline.dart';
+import 'componets/email.dart';
 import 'componets/name.dart';
-import 'componets/trips.dart';
+import 'componets/phone.dart';
 
 class InfoCard extends StatefulWidget {
   InfoCard({Key? key}) : super(key: key);
@@ -56,8 +56,8 @@ class _InfoCardState extends State<InfoCard> {
         var imgUrl = apiData![index]['profileImage'];
         var name =
             apiData![index]['name']; // Extract the 'name' from the API data
-        var trips = apiData![index]['email'];
-        var airline =
+        var email = apiData![index]['email'];
+        var phone =
             apiData![index]['phone']; //// Extract the 'trips' from the API data
         // var airlineName = apiData![index]['airline'][0]
         //     ['name']; // Extract the 'airline' name from the API data
@@ -75,10 +75,12 @@ class _InfoCardState extends State<InfoCard> {
           child: Container(
             clipBehavior: Clip.hardEdge,
             margin: EdgeInsets.all(10),
-            padding: EdgeInsets.only(
-              right: 20,
-            ),
+            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
             decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("asset/img.png"),
+                fit: BoxFit.cover,
+              ),
               boxShadow: [
                 BoxShadow(
                   blurRadius: 5.0,
@@ -92,19 +94,19 @@ class _InfoCardState extends State<InfoCard> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Logo(
+                Profile(
                   imgUrl: imgUrl,
                 ), // Widget to display the logo and background
                 SizedBox(width: 20),
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     UserName(name: name), // Widget to display the user's name
-                    Trips(
-                        count: trips), // Widget to display the number of trips
-                    Airline(
-                        name: airline), // Widget to display the airline name
+                    Email(
+                        emailId:
+                            email), // Widget to display the number of trips
+                    Phone(number: phone), // Widget to display the airline name
                   ],
                 ),
               ],

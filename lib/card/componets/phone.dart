@@ -3,23 +3,23 @@
 
 import 'package:flutter/material.dart';
 
-class Airline extends StatelessWidget {
-  const Airline({
+class Phone extends StatelessWidget {
+  const Phone({
     Key? key,
-    required this.name,
+    required this.number,
   }) : super(key: key);
   // Define a constant constructor for the Airline widget which requires a 'name' parameter.
 
-  final String name; // The name of the airline.
+  final String number; // The name of the airline.
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Text(
-          name, // Display the airline's name.
+          '+91 $number', // Display the airline's name.
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.deepPurple,
             fontSize: 12,
             fontWeight: FontWeight.w500,
           ),

@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // Implementing Appbar
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color(0xFF232323),
+        backgroundColor: Color(0xFF280036),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(20),
