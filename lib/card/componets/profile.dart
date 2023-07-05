@@ -11,7 +11,7 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(2),
+      padding: const EdgeInsets.all(2),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(60),
           border: Border.all(color: Colors.deepPurpleAccent, width: 2)),
@@ -20,6 +20,7 @@ class Profile extends StatelessWidget {
         child: Image.network(
           imgUrl, // Path to the asset image
           height: 70,
+          width: 70,
 
           fit:
               BoxFit.cover, // Fit the image within the container by covering it

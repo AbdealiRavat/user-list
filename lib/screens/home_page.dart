@@ -35,42 +35,20 @@ class _MyHomePageState extends State<MyHomePage> {
       // Implementing Appbar
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color(0xFF280036),
-        shape: RoundedRectangleBorder(
+        backgroundColor: const Color(0xFF280036),
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(20),
                 bottomLeft: Radius.circular(20))),
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Users List',
           style: TextStyle(color: Colors.white),
         ),
       ),
-      // bottomNavigationBar: ClipRRect(
-      //   borderRadius: BorderRadius.only(
-      //     topLeft: Radius.circular(25.0),
-      //     topRight: Radius.circular(25.0),
-      //   ),
-      //   child: BottomNavigationBar(
-      //     items: [
-      //       BottomNavigationBarItem(
-      //           label: 'Home',
-      //           icon: Icon(
-      //             Icons.home,
-      //           )),
-      //       BottomNavigationBarItem(
-      //           label: 'Music', icon: Icon(Icons.music_note)),
-      //       BottomNavigationBarItem(
-      //           label: 'Form', icon: Icon(Icons.format_align_justify)),
-      //     ],
-      //     currentIndex: _selectedIndex,
-      //     selectedItemColor: Colors.deepPurple,
-      //     onTap: _onItemTapped,
-      //   ),
-      // ),
       body: Center(
         child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 14), child: InfoCard()),
+            padding: const EdgeInsets.symmetric(horizontal: 14), child: const InfoCard()),
 
         // _widgetOptions.elementAt(
         //     _selectedIndex)

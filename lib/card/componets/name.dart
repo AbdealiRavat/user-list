@@ -21,7 +21,7 @@ class UserName extends StatelessWidget {
 
         style: TextStyle(
             color: Colors.grey.shade900,
-            fontSize: 16,
+            fontSize: 14,
             fontWeight: FontWeight.w700,
             letterSpacing: 1),
       ),

@@ -14,17 +14,13 @@ class Phone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          '+91 $number', // Display the airline's name.
-          style: TextStyle(
-            color: Colors.deepPurple,
-            fontSize: 12,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ],
+    return Text(
+      '+91 $number', // Display the airline's name.
+      style: TextStyle(
+        color: Colors.deepPurple,
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+      ),
     );
   }
 }
