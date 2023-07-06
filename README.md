@@ -3,7 +3,8 @@
 User Info is a Flutter application that provides a beautiful user interface for displaying user information fetched from an API. It includes features such as cards, list view, infinite scrolling, and fetching data through an API.
 
 ![ss](https://github.com/AbdealiRavat/user-list/assets/71277590/d7f112c8-7b0f-4dca-bc2b-2ff66ca6a25d) 
-https://github.com/AbdealiRavat/user-list/assets/71277590/142f6dcd-fd5e-4a5f-ae7b-fddb4468fe8d
+
+https://github.com/AbdealiRavat/user-list/assets/71277590/24d41b67-8a65-462e-8062-618584096a42
 
 
 
