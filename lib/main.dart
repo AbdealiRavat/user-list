@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
               GoogleFonts.workSansTextTheme(Theme.of(context).textTheme)),
 
       debugShowCheckedModeBanner: false,
-      title: 'HomePage',
+      title: 'User List',
       // Set the home page of the app
       home: MyHomePage(),
     );
