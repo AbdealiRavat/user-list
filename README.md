@@ -4,27 +4,17 @@ User Info is a Flutter application that provides a beautiful user interface for 
 
 ## Features
 
-### Beautiful UI
-
 User Info app offers a visually appealing user interface designed to enhance the user experience. The UI components, color schemes, and overall layout have been carefully crafted to provide an aesthetically pleasing and engaging environment.
-
-### Cards
 
 The app utilizes card-based UI components to present user information in a structured and organized manner. Each card represents a user and displays relevant details such as their name, profile picture, and additional information.
 
-### List View
-
 User Info implements a list view to efficiently display multiple user cards. The list view allows users to scroll through a large collection of users easily and quickly find the information they are looking for.
-
-### Infinite Scrolling
 
 To optimize performance and improve user experience, the app incorporates infinite scrolling. As users scroll through the list view, additional user data is fetched from the API in small batches, ensuring a smooth and seamless scrolling experience.
 
-### Displaying Data Through API
 
 User Info fetches user data from a remote API. The app communicates with the API to retrieve user information, such as names, profile pictures, and additional details. This dynamic data retrieval ensures that the user information is always up to date and can be easily refreshed when necessary.
 
-## Installation
 
 To run the User Info app locally on your machine, follow these steps:
 
