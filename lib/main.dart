@@ -20,10 +20,8 @@ class _MyAppState extends State<MyApp> {
           useMaterial3: true,
           textTheme:
               GoogleFonts.workSansTextTheme(Theme.of(context).textTheme)),
-
       debugShowCheckedModeBanner: false,
       title: 'User List',
-      // Set the home page of the app
       home: MyHomePage(),
     );
   }

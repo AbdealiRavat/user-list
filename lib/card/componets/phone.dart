@@ -8,14 +8,13 @@ class Phone extends StatelessWidget {
     Key? key,
     required this.number,
   }) : super(key: key);
-  // Define a constant constructor for the Airline widget which requires a 'name' parameter.
 
-  final String number; // The name of the airline.
+  final String number; // Phone number to display
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      '+91 $number', // Display the airline's name.
+      '+91 $number', // Display the phone number with a country code
       style: TextStyle(
         color: Colors.deepPurple,
         fontSize: 12,

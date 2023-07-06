@@ -8,7 +8,6 @@ class UserName extends StatelessWidget {
     Key? key,
     required this.name,
   }) : super(key: key);
-  // Define a constant constructor for the UserName widget which requires a 'name' parameter.
 
   final String name; // The name of the user.
 

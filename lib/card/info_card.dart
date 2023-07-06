@@ -18,28 +18,26 @@ class InfoCard extends StatefulWidget {
 }
 
 class _InfoCardState extends State<InfoCard> {
-  // List<dynamic>? apiData;
-  List post = [];
-  int page = 1;
-
+  List<dynamic> post = []; // List to store API data
+  int page = 1; // Current page number for API pagination
   final scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
-    scrollController.addListener(_scrollListener);
-    apiCall();
+    scrollController.addListener(_scrollListener); // Add scroll listener
+    apiCall(); // Make API call to fetch initial data
   }
 
-  Future apiCall() async {
-    var url = Uri.parse('http://api.anviya.in/getUsers.php?page=$page');
-    print('url');
-    print(url);
-    var response = await http.get(url);
+  Future<void> apiCall() async {
+    final url = Uri.parse(
+        'http://api.anviya.in/getUsers.php?page=$page'); // API endpoint URL
+    final response = await http.get(url); // Send GET request to the API
     if (response.statusCode == 200) {
-      final apiData = json.decode(response.body)['data']['users'] as List;
+      final apiData = json.decode(response.body)['data']['users']
+          as List<dynamic>; // Extract the user data from API response
       setState(() {
-        post = post + apiData;
+        post.addAll(apiData); // Add fetched data to the 'post' list
       });
     } else {
       print('Request failed with status: ${response.statusCode}.');
@@ -49,57 +47,57 @@ class _InfoCardState extends State<InfoCard> {
   void _scrollListener() {
     if (scrollController.position.pixels ==
         scrollController.position.maxScrollExtent) {
-      page = page + 1;
-      apiCall();
-    } else {
-      // print('Scroll Listener Not called');
+      page += 1; // Increment the page number for the next API call
+      apiCall(); // Make API call to fetch more data
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (post == null) {
+    if (post.isEmpty) {
+      // Show a loading indicator while data is being fetched
       return const Center(child: CircularProgressIndicator());
     }
 
     return ListView.builder(
       controller: scrollController,
       shrinkWrap: true,
-      itemCount: post!.length,
+      itemCount: post.length,
       itemBuilder: (BuildContext context, int index) {
-        var imgUrl = post[index]['profileImage'];
-        var name = post[index]['name'];
-        var email = post[index]['email'];
-        var phone = post[index]['phone'];
+        final imgUrl = post[index]['profileImage']; // Extract image URL
+        final name = post[index]['name']; // Extract name
+        final email = post[index]['email']; // Extract email
+        final phone = post[index]['phone']; // Extract phone number
 
         return InkWell(
           onTap: () {
             Fluttertoast.showToast(
-              msg: 'InfoCard $index clicked',
+              msg:
+                  'InfoCard $index clicked', // Show a toast message when a card is clicked
             );
             print('InfoCard $index clicked');
           },
           child: CardContainer(
-              child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Profile(
-                imgUrl: imgUrl,
-              ),
-              const SizedBox(width: 20),
-              Expanded(
-                child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    UserName(name: name),
-                    Email(emailId: email),
-                    Phone(number: phone),
-                  ],
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Profile(
+                  imgUrl: imgUrl,
                 ),
-              ),
-            ],
-          )),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      UserName(name: name),
+                      Email(emailId: email),
+                      Phone(number: phone),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         );
       },
     );

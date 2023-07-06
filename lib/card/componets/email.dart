@@ -9,14 +9,14 @@ class Email extends StatelessWidget {
     required this.emailId,
   }) : super(key: key);
 
-  final String emailId; // The number of trips.
+  final String emailId; // Email Id to display
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 10),
       child: Text(
-        emailId, // Display the count of trips.
+        emailId, // Display the email Id of the user.
         style: TextStyle(
           color: Colors.black,
           fontSize: 13,

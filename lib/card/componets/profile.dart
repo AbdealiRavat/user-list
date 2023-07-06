@@ -6,7 +6,7 @@ class Profile extends StatelessWidget {
     required this.imgUrl,
   }) : super(key: key);
 
-  final String imgUrl;
+  final String imgUrl; // Profile Image to display
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +22,7 @@ class Profile extends StatelessWidget {
           height: 70,
           width: 70,
 
-          fit:
-              BoxFit.cover, // Fit the image within the container by covering it
+          fit: BoxFit.cover,
         ),
       ),
     );
