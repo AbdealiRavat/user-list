@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'screens/home_page.dart';
+import 'theme/dark_theme.dart';
+import 'theme/light_theme.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,10 +18,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-          useMaterial3: true,
-          textTheme:
-              GoogleFonts.workSansTextTheme(Theme.of(context).textTheme)),
+      theme: lightTheme,
+      darkTheme: darkTheme,
       debugShowCheckedModeBanner: false,
       title: 'User List',
       home: MyHomePage(),

@@ -31,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 14),
-          child: const InfoCard(), // Display the InfoCard widget
+          child: InfoCard(), // Display the InfoCard widget
         ),
       ),
     );
