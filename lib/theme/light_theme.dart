@@ -7,7 +7,7 @@ ThemeData lightTheme = ThemeData(
   useMaterial3: true,
     fontFamily: GoogleFonts.workSans().fontFamily,
   brightness: Brightness.light,
-  colorScheme: ColorScheme.light(
+  colorScheme: const ColorScheme.light(
     background: Color.fromARGB(255, 243, 243, 243)
   )
   );
