@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import '../card/componets/profile.dart';
 
 class UserDetails extends StatelessWidget {
+  String id;
   String name;
   String email;
   String imgUrl;
   UserDetails(
       {super.key,
+      required this.id,
       required this.name,
       required this.email,
       required this.imgUrl});
@@ -25,6 +27,14 @@ class UserDetails extends StatelessWidget {
                 bottomLeft: Radius.circular(20))),
         centerTitle: true,
         automaticallyImplyLeading: false,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.arrow_back_ios_new,
+              color: Colors.grey.shade800,
+            )),
         title: const Text(
           'Users Details',
           style: TextStyle(color: Color(0xFF280036)),
@@ -34,8 +44,9 @@ class UserDetails extends StatelessWidget {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Profile(
-            imgUrl: imgUrl,
+          Hero(
+            tag: id,
+            child: Profile(imgUrl: imgUrl, height: 120),
           ),
           const SizedBox(
             height: 20,

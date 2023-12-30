@@ -1,10 +1,10 @@
 import 'package:demo_page/card/card_container.dart';
 import 'package:demo_page/card/componets/profile.dart';
-import 'package:demo_page/card/controller/api_controller.dart';
 import 'package:demo_page/screens/user_details.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../controller/api_controller.dart';
 import 'componets/email.dart';
 import 'componets/name.dart';
 import 'componets/phone.dart';
@@ -26,6 +26,7 @@ class InfoCard extends StatelessWidget {
           shrinkWrap: true,
           itemCount: apiController.post.length,
           itemBuilder: (BuildContext context, int index) {
+            final id = apiController.post[index]['id'];
             final imgUrl =
                 apiController.post[index]['profileImage']; // Extract image URL
             final name = apiController.post[index]['name']; // Extract name
@@ -37,13 +38,14 @@ class InfoCard extends StatelessWidget {
               onTap: () {
                 // Fluttertoast.showToast(
                 //   msg:
-                //       'Details Page for $name', // Show a toast message when a card is clicked
+                //       'Details Page for $imgUrl', // Show a toast message when a card is clicked
                 // );
                 // print('InfoCard $index clicked');
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => UserDetails(
+                              id: id,
                               name: name,
                               email: email,
                               imgUrl: imgUrl,
@@ -53,8 +55,9 @@ class InfoCard extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Profile(
-                      imgUrl: imgUrl,
+                    Hero(
+                      tag: id,
+                      child: Profile(imgUrl: imgUrl, height: 70),
                     ),
                     const SizedBox(width: 20),
                     Expanded(
